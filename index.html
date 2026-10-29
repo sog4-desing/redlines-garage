@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>REDLINE GARAGE</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,26 +14,34 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Inter',sans-serif;
+font-family:Inter,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
 background:#050505;
 color:white;
-overflow-x:hidden;
+transition:.4s;
+}
+
+.light{
+background:white;
+color:black;
 }
 
 header{
 position:fixed;
 top:0;
-left:0;
 width:100%;
-padding:25px 8%;
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,.5);
-backdrop-filter:blur(15px);
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
@@ -42,13 +51,13 @@ font-weight:900;
 }
 
 .logo span{
-color:#ff2323;
+color:red;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin-left:25px;
+margin-left:20px;
 font-weight:600;
 }
 
@@ -56,134 +65,115 @@ font-weight:600;
 height:100vh;
 display:flex;
 align-items:center;
-padding:0 8%;
+padding-left:8%;
 background:
-linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.8)),
-url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=80');
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.8)),
+url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=80");
 
 background-size:cover;
 background-position:center;
 }
 
-.hero-content{
-max-width:900px;
-}
-
-.hero small{
-color:#ff2323;
-font-weight:700;
-letter-spacing:4px;
-}
-
 .hero h1{
-font-size:110px;
+font-size:90px;
 line-height:0.9;
-margin-top:15px;
 }
 
 .hero p{
-margin-top:25px;
-font-size:20px;
-color:#c8c8c8;
-max-width:650px;
+margin-top:20px;
+font-size:22px;
+max-width:600px;
 }
 
 .btn{
 display:inline-block;
 margin-top:30px;
-padding:18px 35px;
-background:#ff2323;
+padding:15px 35px;
+background:red;
 color:white;
 text-decoration:none;
-border-radius:50px;
-font-weight:700;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-box-shadow:0 0 30px red;
+border-radius:30px;
 }
 
 section{
-padding:120px 8%;
+padding:100px 8%;
 }
 
-.title{
-font-size:60px;
-font-weight:900;
-margin-bottom:50px;
+h2{
+font-size:50px;
+margin-bottom:40px;
 }
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
 }
 
 .card{
-background:#111;
-padding:30px;
+background:#151515;
+padding:25px;
 border-radius:20px;
-border:1px solid rgba(255,255,255,.08);
 transition:.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-border-color:#ff2323;
-}
-
-.card h3{
-color:#ff2323;
-margin-bottom:10px;
 }
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:20px;
 }
 
 .gallery img{
 width:100%;
-height:250px;
-object-fit:cover;
 border-radius:20px;
-transition:.4s;
+cursor:pointer;
+transition:.3s;
 }
 
 .gallery img:hover{
-transform:scale(1.05);
+transform:scale(1.03);
 }
 
-.stats{
-display:flex;
-justify-content:center;
-gap:60px;
-flex-wrap:wrap;
+button{
+padding:12px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin:5px;
+font-weight:bold;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:15px;
+margin-top:10px;
+margin-bottom:15px;
+border:none;
+border-radius:10px;
+}
+
+.footer{
 text-align:center;
+padding:40px;
+background:#111;
 }
 
-.stats h2{
-font-size:70px;
-color:#ff2323;
-}
-
-footer{
-background:black;
-padding:50px;
-text-align:center;
+#resultat{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+color:red;
 }
 
 @media(max-width:768px){
 
 .hero h1{
-font-size:60px;
-}
-
-.title{
-font-size:40px;
+font-size:55px;
 }
 
 nav{
@@ -193,40 +183,40 @@ display:none;
 }
 
 </style>
-
 </head>
+
 <body>
 
 <header>
+
 <div class="logo">
 <span>REDLINE</span> GARAGE
 </div>
 
 <nav>
-<a href="#">Accueil</a>
 <a href="#services">Services</a>
+<a href="#config">Configurateur</a>
 <a href="#galerie">Galerie</a>
+<a href="#top">Top 5</a>
 <a href="#contact">Contact</a>
 </nav>
+
 </header>
 
 <section class="hero">
 
-<div class="hero-content">
+<div>
 
-<small>BUILT NOT BOUGHT</small>
-
-<h1>
-DÉPASSE<br>
-LES LIMITES
-</h1>
+<h1>DÉPASSE LES LIMITES</h1>
 
 <p>
-Spécialiste du tuning automobile, préparation moteur,
-widebody, jantes premium et véhicules d'exception.
+Le monde du tuning automobile premium.
+BMW M4, Audi RS6, Nissan GTR, Golf GTI et plus.
 </p>
 
-<a href="#galerie" class="btn">Découvrir</a>
+<a href="#config" class="btn">
+Découvrir
+</a>
 
 </div>
 
@@ -234,40 +224,90 @@ widebody, jantes premium et véhicules d'exception.
 
 <section id="services">
 
-<h2 class="title">NOS SERVICES</h2>
+<h2>Services</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>🏁 Préparation Performance</h3>
-<p>Optimisation moteur et reprogrammation.</p>
+<h3>🏁 Préparation moteur</h3>
+<p>Optimisation et performance.</p>
 </div>
 
 <div class="card">
-<h3>🔥 Kit Carrosserie</h3>
-<p>Transformez votre voiture avec un look unique.</p>
+<h3>🔥 Bodykit</h3>
+<p>Transformation esthétique complète.</p>
 </div>
 
 <div class="card">
 <h3>💎 Jantes Premium</h3>
-<p>Sélection de jantes haut de gamme.</p>
+<p>Installation et personnalisation.</p>
 </div>
 
 </div>
 
 </section>
 
+<section id="config">
+
+<h2>🚗 Configurateur</h2>
+
+<img
+id="car"
+src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
+style="width:100%;max-width:800px;border-radius:20px;">
+
+<br><br>
+
+<button onclick="rouge()">🔴 Rouge</button>
+<button onclick="bleu()">🔵 Bleu</button>
+<button onclick="noir()">⚫ Noir</button>
+
+<br><br>
+
+<button onclick="alert('Jantes Sport installées')">
+🏎️ Jantes Sport
+</button>
+
+<button onclick="alert('Jantes Racing installées')">
+🔥 Jantes Racing
+</button>
+
+<button onclick="alert('LEDs activées')">
+💡 LEDs ON
+</button>
+
+</section>
+
 <section id="galerie">
 
-<h2 class="title">NOS PROJETS</h2>
+<h2>📸 Galerie</h2>
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80">
+<img onclick="agrandir(this.src)"
+src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80">
 
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80">
+<img onclick="agrandir(this.src)"
+src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80">
 
-<img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80">
+<img onclick="agrandir(this.src)"
+src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80">
+
+</div>
+
+</section>
+
+<section id="top">
+
+<h2>🏆 Top 5 Tuning</h2>
+
+<div class="cards">
+
+<div class="card">🥇 BMW M4</div>
+<div class="card">🥈 Nissan GTR R35</div>
+<div class="card">🥉 Audi RS6</div>
+<div class="card">4️⃣ Golf GTI</div>
+<div class="card">5️⃣ Mercedes C63 AMG</div>
 
 </div>
 
@@ -275,36 +315,105 @@ widebody, jantes premium et véhicules d'exception.
 
 <section>
 
-<div class="stats">
+<h2>🎮 Crée ta voiture idéale</h2>
 
-<div>
-<h2>500+</h2>
-<p>Préparations</p>
-</div>
+<button onclick="creerVoiture()">
+Générer
+</button>
 
-<div>
-<h2>1200+</h2>
-<p>Clients</p>
-</div>
-
-<div>
-<h2>15</h2>
-<p>Ans d'expérience</p>
-</div>
-
-</div>
+<p id="resultat"></p>
 
 </section>
 
-<footer id="contact">
+<section>
+
+<h2>🌙 Apparence</h2>
+
+<button onclick="document.body.classList.toggle('light')">
+Changer de thème
+</button>
+
+</section>
+
+<section id="contact">
+
+<h2>📞 Contact</h2>
+
+<form class="contact">
+
+<input type="text" placeholder="Nom">
+
+<input type="email" placeholder="Email">
+
+<textarea rows="5" placeholder="Votre message"></textarea>
+
+<button type="button"
+onclick="alert('Message envoyé !')">
+Envoyer
+</button>
+
+</form>
+
+</section>
+
+<div class="footer">
 
 <h2>REDLINE GARAGE</h2>
-<br>
 
-<p>Email : contact@redline-garage.fr</p>
-<p>Instagram : @redlinegarage</p>
+<p>
+Performance • Style • Passion
+</p>
 
-</footer>
+</div>
+
+<script>
+
+function agrandir(src){
+window.open(src);
+}
+
+function rouge(){
+document.getElementById("car").style.filter="hue-rotate(0deg)";
+}
+
+function bleu(){
+document.getElementById("car").style.filter="hue-rotate(140deg)";
+}
+
+function noir(){
+document.getElementById("car").style.filter="grayscale(1)";
+}
+
+function creerVoiture(){
+
+let couleurs=[
+"Rouge",
+"Bleue",
+"Noire",
+"Blanche"
+];
+
+let jantes=[
+"Sport",
+"Racing",
+"Premium"
+];
+
+let couleur=
+couleurs[Math.floor(Math.random()*couleurs.length)];
+
+let jante=
+jantes[Math.floor(Math.random()*jantes.length)];
+
+document.getElementById("resultat").innerHTML=
+"🚗 Ta voiture idéale : " +
+couleur +
+" avec jantes " +
+jante;
+
+}
+
+</script>
 
 </body>
 </html>
