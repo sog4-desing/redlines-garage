@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REDLINE GARAGE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.5);
+backdrop-filter:blur(15px);
+z-index:1000;
+}
+
+.logo{
+font-size:30px;
+font-weight:900;
+}
+
+.logo span{
+color:#ff2323;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:600;
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+padding:0 8%;
+background:
+linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.8)),
+url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=80');
+
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero small{
+color:#ff2323;
+font-weight:700;
+letter-spacing:4px;
+}
+
+.hero h1{
+font-size:110px;
+line-height:0.9;
+margin-top:15px;
+}
+
+.hero p{
+margin-top:25px;
+font-size:20px;
+color:#c8c8c8;
+max-width:650px;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:18px 35px;
+background:#ff2323;
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-weight:700;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px red;
+}
+
+section{
+padding:120px 8%;
+}
+
+.title{
+font-size:60px;
+font-weight:900;
+margin-bottom:50px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:#111;
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#ff2323;
+}
+
+.card h3{
+color:#ff2323;
+margin-bottom:10px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:20px;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+text-align:center;
+}
+
+.stats h2{
+font-size:70px;
+color:#ff2323;
+}
+
+footer{
+background:black;
+padding:50px;
+text-align:center;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:60px;
+}
+
+.title{
+font-size:40px;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+<div class="logo">
+<span>REDLINE</span> GARAGE
+</div>
+
+<nav>
+<a href="#">Accueil</a>
+<a href="#services">Services</a>
+<a href="#galerie">Galerie</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<small>BUILT NOT BOUGHT</small>
+
+<h1>
+DÉPASSE<br>
+LES LIMITES
+</h1>
+
+<p>
+Spécialiste du tuning automobile, préparation moteur,
+widebody, jantes premium et véhicules d'exception.
+</p>
+
+<a href="#galerie" class="btn">Découvrir</a>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<h2 class="title">NOS SERVICES</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🏁 Préparation Performance</h3>
+<p>Optimisation moteur et reprogrammation.</p>
+</div>
+
+<div class="card">
+<h3>🔥 Kit Carrosserie</h3>
+<p>Transformez votre voiture avec un look unique.</p>
+</div>
+
+<div class="card">
+<h3>💎 Jantes Premium</h3>
+<p>Sélection de jantes haut de gamme.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="galerie">
+
+<h2 class="title">NOS PROJETS</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80">
+
+</div>
+
+</section>
+
+<section>
+
+<div class="stats">
+
+<div>
+<h2>500+</h2>
+<p>Préparations</p>
+</div>
+
+<div>
+<h2>1200+</h2>
+<p>Clients</p>
+</div>
+
+<div>
+<h2>15</h2>
+<p>Ans d'expérience</p>
+</div>
+
+</div>
+
+</section>
+
+<footer id="contact">
+
+<h2>REDLINE GARAGE</h2>
+<br>
+
+<p>Email : contact@redline-garage.fr</p>
+<p>Instagram : @redlinegarage</p>
+
+</footer>
+
+</body>
+</html>
