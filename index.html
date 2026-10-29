@@ -3,416 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>REDLINE GARAGE</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<title>Auto Passion</title>
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter,sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-background:#050505;
-color:white;
-transition:.4s;
-}
-
-.light{
-background:white;
-color:black;
+    background:#0d0d0d;
+    color:white;
 }
 
 header{
-position:fixed;
-top:0;
-width:100%;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,.6);
-backdrop-filter:blur(10px);
-z-index:1000;
+    text-align:center;
+    padding:40px;
+    background:black;
+    border-bottom:3px solid red;
 }
 
-.logo{
-font-size:30px;
-font-weight:900;
+header h1{
+    color:red;
+    font-size:3rem;
 }
 
-.logo span{
-color:red;
+header p{
+    color:#ccc;
+    margin-top:10px;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-font-weight:600;
+.container{
+    width:90%;
+    margin:auto;
+    padding:40px 0;
 }
 
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-padding-left:8%;
-background:
-linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.8)),
-url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=80");
-
-background-size:cover;
-background-position:center;
-}
-
-.hero h1{
-font-size:90px;
-line-height:0.9;
-}
-
-.hero p{
-margin-top:20px;
-font-size:22px;
-max-width:600px;
-}
-
-.btn{
-display:inline-block;
-margin-top:30px;
-padding:15px 35px;
-background:red;
-color:white;
-text-decoration:none;
-border-radius:30px;
-}
-
-section{
-padding:100px 8%;
-}
-
-h2{
-font-size:50px;
-margin-bottom:40px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
+.cars{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
 }
 
 .card{
-background:#151515;
-padding:25px;
-border-radius:20px;
-transition:.3s;
+    background:#171717;
+    border:2px solid rgba(255,0,0,0.3);
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.4s;
+    cursor:pointer;
 }
 
 .card:hover{
-transform:translateY(-10px);
+    transform:scale(1.05);
+    box-shadow:0 0 20px red;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
 }
 
-.gallery img{
-width:100%;
-border-radius:20px;
-cursor:pointer;
-transition:.3s;
+.card-content{
+    padding:20px;
 }
 
-.gallery img:hover{
-transform:scale(1.03);
+.card h2{
+    color:red;
+    margin-bottom:10px;
 }
 
-button{
-padding:12px 20px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-margin:5px;
-font-weight:bold;
+.card button{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    background:red;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
 }
 
-.contact input,
-.contact textarea{
-width:100%;
-padding:15px;
-margin-top:10px;
-margin-bottom:15px;
-border:none;
-border-radius:10px;
+.details{
+    display:none;
+    margin-top:15px;
+    line-height:1.8;
 }
 
-.footer{
-text-align:center;
-padding:40px;
-background:#111;
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:3px solid red;
+    margin-top:40px;
 }
-
-#resultat{
-margin-top:20px;
-font-size:22px;
-font-weight:bold;
-color:red;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:55px;
-}
-
-nav{
-display:none;
-}
-
-}
-
 </style>
 </head>
-
 <body>
 
 <header>
-
-<div class="logo">
-<span>REDLINE</span> GARAGE
-</div>
-
-<nav>
-<a href="#services">Services</a>
-<a href="#config">Configurateur</a>
-<a href="#galerie">Galerie</a>
-<a href="#top">Top 5</a>
-<a href="#contact">Contact</a>
-</nav>
-
+    <h1>AUTO PASSION</h1>
+    <p>Porsche & BMW Performance</p>
 </header>
 
-<section class="hero">
+<div class="container">
+    <div class="cars">
 
-<div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200" alt="">
+            <div class="card-content">
+                <h2>Porsche 911 GT3 RS</h2>
+                <p>525 ch • Flat-6 atmosphérique</p>
+                <button onclick="toggleDetails('gt3rs')">
+                    Voir les détails
+                </button>
 
-<h1>DÉPASSE LES LIMITES</h1>
+                <div id="gt3rs" class="details">
+                    <p><strong>Puissance :</strong> 525 ch</p>
+                    <p><strong>Moteur :</strong> Flat-6 4.0L</p>
+                    <p><strong>0-100 km/h :</strong> 3,2 s</p>
+                    <p><strong>Vitesse max :</strong> 296 km/h</p>
+                    <p><strong>Transmission :</strong> PDK 7 rapports</p>
+                    <p><strong>Poids :</strong> 1450 kg</p>
+                    <p><strong>Description :</strong> La GT3 RS est l'une des Porsche les plus performantes pour la piste grâce à son immense aileron et son aérodynamique avancée.</p>
+                </div>
+            </div>
+        </div>
 
-<p>
-Le monde du tuning automobile premium.
-BMW M4, Audi RS6, Nissan GTR, Golf GTI et plus.
-</p>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=1200" alt="">
+            <div class="card-content">
+                <h2>BMW M3 G80</h2>
+                <p>510 ch • Twin Turbo</p>
+                <button onclick="toggleDetails('m3')">
+                    Voir les détails
+                </button>
 
-<a href="#config" class="btn">
-Découvrir
-</a>
+                <div id="m3" class="details">
+                    <p><strong>Puissance :</strong> 510 ch</p>
+                    <p><strong>Moteur :</strong> 3.0L Twin Turbo</p>
+                    <p><strong>0-100 km/h :</strong> 3,9 s</p>
+                    <p><strong>Vitesse max :</strong> 290 km/h</p>
+                    <p><strong>Transmission :</strong> Automatique 8 rapports</p>
+                    <p><strong>Description :</strong> Berline ultra sportive de BMW offrant un parfait compromis entre performance et confort.</p>
+                </div>
+            </div>
+        </div>
 
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200" alt="">
+            <div class="card-content">
+                <h2>BMW M2 G87</h2>
+                <p>460 ch • Propulsion</p>
+                <button onclick="toggleDetails('m2')">
+                    Voir les détails
+                </button>
+
+                <div id="m2" class="details">
+                    <p><strong>Puissance :</strong> 460 ch</p>
+                    <p><strong>Moteur :</strong> 3.0L Twin Turbo</p>
+                    <p><strong>0-100 km/h :</strong> 4,1 s</p>
+                    <p><strong>Vitesse max :</strong> 285 km/h</p>
+                    <p><strong>Transmission :</strong> Manuelle ou Automatique</p>
+                    <p><strong>Description :</strong> La M2 G87 est la plus compacte des BMW M actuelles avec un comportement très joueur.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
-</section>
-
-<section id="services">
-
-<h2>Services</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>🏁 Préparation moteur</h3>
-<p>Optimisation et performance.</p>
-</div>
-
-<div class="card">
-<h3>🔥 Bodykit</h3>
-<p>Transformation esthétique complète.</p>
-</div>
-
-<div class="card">
-<h3>💎 Jantes Premium</h3>
-<p>Installation et personnalisation.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="config">
-
-<h2>🚗 Configurateur</h2>
-
-<img
-id="car"
-src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
-style="width:100%;max-width:800px;border-radius:20px;">
-
-<br><br>
-
-<button onclick="rouge()">🔴 Rouge</button>
-<button onclick="bleu()">🔵 Bleu</button>
-<button onclick="noir()">⚫ Noir</button>
-
-<br><br>
-
-<button onclick="alert('Jantes Sport installées')">
-🏎️ Jantes Sport
-</button>
-
-<button onclick="alert('Jantes Racing installées')">
-🔥 Jantes Racing
-</button>
-
-<button onclick="alert('LEDs activées')">
-💡 LEDs ON
-</button>
-
-</section>
-
-<section id="galerie">
-
-<h2>📸 Galerie</h2>
-
-<div class="gallery">
-
-<img onclick="agrandir(this.src)"
-src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80">
-
-<img onclick="agrandir(this.src)"
-src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80">
-
-<img onclick="agrandir(this.src)"
-src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80">
-
-</div>
-
-</section>
-
-<section id="top">
-
-<h2>🏆 Top 5 Tuning</h2>
-
-<div class="cards">
-
-<div class="card">🥇 BMW M4</div>
-<div class="card">🥈 Nissan GTR R35</div>
-<div class="card">🥉 Audi RS6</div>
-<div class="card">4️⃣ Golf GTI</div>
-<div class="card">5️⃣ Mercedes C63 AMG</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2>🎮 Crée ta voiture idéale</h2>
-
-<button onclick="creerVoiture()">
-Générer
-</button>
-
-<p id="resultat"></p>
-
-</section>
-
-<section>
-
-<h2>🌙 Apparence</h2>
-
-<button onclick="document.body.classList.toggle('light')">
-Changer de thème
-</button>
-
-</section>
-
-<section id="contact">
-
-<h2>📞 Contact</h2>
-
-<form class="contact">
-
-<input type="text" placeholder="Nom">
-
-<input type="email" placeholder="Email">
-
-<textarea rows="5" placeholder="Votre message"></textarea>
-
-<button type="button"
-onclick="alert('Message envoyé !')">
-Envoyer
-</button>
-
-</form>
-
-</section>
-
-<div class="footer">
-
-<h2>REDLINE GARAGE</h2>
-
-<p>
-Performance • Style • Passion
-</p>
-
-</div>
+<footer>
+    <p>© 2026 Auto Passion</p>
+</footer>
 
 <script>
+function toggleDetails(id){
+    let details = document.getElementById(id);
 
-function agrandir(src){
-window.open(src);
+    if(details.style.display === "block"){
+        details.style.display = "none";
+    } else {
+        details.style.display = "block";
+    }
 }
-
-function rouge(){
-document.getElementById("car").style.filter="hue-rotate(0deg)";
-}
-
-function bleu(){
-document.getElementById("car").style.filter="hue-rotate(140deg)";
-}
-
-function noir(){
-document.getElementById("car").style.filter="grayscale(1)";
-}
-
-function creerVoiture(){
-
-let couleurs=[
-"Rouge",
-"Bleue",
-"Noire",
-"Blanche"
-];
-
-let jantes=[
-"Sport",
-"Racing",
-"Premium"
-];
-
-let couleur=
-couleurs[Math.floor(Math.random()*couleurs.length)];
-
-let jante=
-jantes[Math.floor(Math.random()*jantes.length)];
-
-document.getElementById("resultat").innerHTML=
-"🚗 Ta voiture idéale : " +
-couleur +
-" avec jantes " +
-jante;
-
-}
-
 </script>
 
 </body>
